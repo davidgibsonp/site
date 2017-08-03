@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">World Food Prices</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Intro &amp; Data Cleaning</a>
+</li>
+<li>
+  <a href="rice.html">Rice</a>
+</li>
+<li>
+  <a href="maize.html">Maize</a>
+</li>
+<li>
+  <a href="sorghum.html">Sorghum</a>
+</li>
+<li>
+  <a href="beans.html">Beans</a>
+</li>
+<li>
+  <a href="millet.html">Millet</a>
+</li>
+<li>
+  <a href="conclusion.html">Conclusion</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<h2>
+Sorghum
+</h2>
+<p>       The third food in the analysis is Sorghum. Which is a cereal grain and is the ﬁfth most important cereal crop in the world, largely because of its natural drought tolerance and versatility as the food, feed, and fuel <a href="https://wholegrainscouncil.org/whole-grains-101/easy-ways-enjoy-whole-grains/grain-month-calendar/sorghum-june-grain-month">Whole Grain Council</a>. For these reasons it is mostly grown in Africa and Australia. For this data set, we mostly see it in Africa.</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-2-1.png" width="1344" /></p>
+<p>       Very similar to maize we see a significant spike from 2002 to 2003 which was a drought in Southern Africa. Although sorghum can grow in dry climates, it is still vulnerable to droughts.</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-3-1.png" width="1344" style="display: block; margin: auto;" /></p>
+<p>       As far as the inflation of sorghum there is a less symmetric histogram meaning prices fluctuate often.</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-4-1.png" width="1344" /></p>
+<p>       Once again a vast majority of the data is from Sub-Saharan Africa. Also the extremely low prices in Latin America &amp; The Caribbean. Which is interesting because sorghum production is not very large in this region. Though for this data set the region is represented by one country, Honduras. Additionally, for the Middle East and North Africa, there is only data from one country, so the only true representation of a region is for Sub-Saharan Africa.</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
+<p>       Since the only real representation of a region is Sub-Sahrran Africa this chart is accurate</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-6-1.png" width="1344" /></p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-7-1.png" width="1344" /> <img src="sorghum_files/figure-html/unnamed-chunk-8-1.png" width="1344" /> <img src="sorghum_files/figure-html/unnamed-chunk-9-1.png" width="1344" /></p>
+<p>       Once again the countries with the highest prices are South Sudan, Nigeria, and Guinea-Bissau.</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-10-1.png" width="1344" /></p>
+<p>We see that Sudan, Ethiopia, and Cameroon have unstable inflation. For all three of these countries, it is likely that they were also affected by the drought in the South and similar famines like in South Sudan</p>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-11-1.png" width="1344" /> <img src="sorghum_files/figure-html/unnamed-chunk-12-1.png" width="1344" /> <img src="sorghum_files/figure-html/unnamed-chunk-13-1.png" width="1344" /></p>
+<table>
+<caption>Sorghum Standard Deviation vs Avgerage Inflation Table</caption>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="right">avg_infla</th>
+<th align="right">stdev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ethiopia</td>
+<td align="right">8.0542238</td>
+<td align="right">210.68941</td>
+</tr>
+<tr class="even">
+<td align="left">Zambia</td>
+<td align="right">5.1229069</td>
+<td align="right">33.51585</td>
+</tr>
+<tr class="odd">
+<td align="left">South Sudan</td>
+<td align="right">3.5139364</td>
+<td align="right">24.74917</td>
+</tr>
+<tr class="even">
+<td align="left">Somalia</td>
+<td align="right">2.9654894</td>
+<td align="right">36.83750</td>
+</tr>
+<tr class="odd">
+<td align="left">Uganda</td>
+<td align="right">2.6634891</td>
+<td align="right">21.78674</td>
+</tr>
+<tr class="even">
+<td align="left">Chad</td>
+<td align="right">2.2580033</td>
+<td align="right">21.85346</td>
+</tr>
+<tr class="odd">
+<td align="left">Sudan</td>
+<td align="right">1.8953566</td>
+<td align="right">16.80792</td>
+</tr>
+<tr class="even">
+<td align="left">Kenya</td>
+<td align="right">1.7224924</td>
+<td align="right">18.64033</td>
+</tr>
+<tr class="odd">
+<td align="left">Mauritania</td>
+<td align="right">1.6761164</td>
+<td align="right">18.62365</td>
+</tr>
+<tr class="even">
+<td align="left">Gambia</td>
+<td align="right">1.5494117</td>
+<td align="right">18.28253</td>
+</tr>
+<tr class="odd">
+<td align="left">Cameroon</td>
+<td align="right">1.4863805</td>
+<td align="right">17.10844</td>
+</tr>
+<tr class="even">
+<td align="left">Benin</td>
+<td align="right">1.3609812</td>
+<td align="right">16.01797</td>
+</tr>
+<tr class="odd">
+<td align="left">Burkina Faso</td>
+<td align="right">1.0092126</td>
+<td align="right">22.46538</td>
+</tr>
+<tr class="even">
+<td align="left">Zimbabwe</td>
+<td align="right">1.0064183</td>
+<td align="right">25.16375</td>
+</tr>
+<tr class="odd">
+<td align="left">Rwanda</td>
+<td align="right">0.9532453</td>
+<td align="right">13.80558</td>
+</tr>
+<tr class="even">
+<td align="left">Honduras</td>
+<td align="right">0.9241482</td>
+<td align="right">14.27409</td>
+</tr>
+<tr class="odd">
+<td align="left">Senegal</td>
+<td align="right">0.8871079</td>
+<td align="right">14.48709</td>
+</tr>
+<tr class="even">
+<td align="left">Nigeria</td>
+<td align="right">0.8756034</td>
+<td align="right">14.80185</td>
+</tr>
+<tr class="odd">
+<td align="left">Niger</td>
+<td align="right">0.8212911</td>
+<td align="right">12.79779</td>
+</tr>
+<tr class="even">
+<td align="left">Djibouti</td>
+<td align="right">0.8161304</td>
+<td align="right">11.13692</td>
+</tr>
+<tr class="odd">
+<td align="left">Mali</td>
+<td align="right">0.5439806</td>
+<td align="right">10.44736</td>
+</tr>
+<tr class="even">
+<td align="left">Guinea-Bissau</td>
+<td align="right">0.3246782</td>
+<td align="right">13.74623</td>
+</tr>
+</tbody>
+</table>
+<p><img src="sorghum_files/figure-html/unnamed-chunk-15-1.png" width="1152" /></p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

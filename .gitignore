@@ -1,0 +1,15 @@
+.DS_Store
+.Rhistory
+_site.yml
+objects_for_analysis.RData
+build_site.R
+millet.rmd
+conclusion.rmd
+index.rmd
+sorghum.rmd
+beans.rmd
+rice.rmd
+maize.rmd
+
+
+

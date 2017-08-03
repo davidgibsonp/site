@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">World Food Prices</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Intro &amp; Data Cleaning</a>
+</li>
+<li>
+  <a href="rice.html">Rice</a>
+</li>
+<li>
+  <a href="maize.html">Maize</a>
+</li>
+<li>
+  <a href="sorghum.html">Sorghum</a>
+</li>
+<li>
+  <a href="beans.html">Beans</a>
+</li>
+<li>
+  <a href="millet.html">Millet</a>
+</li>
+<li>
+  <a href="conclusion.html">Conclusion</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<h2>
+Rice
+</h2>
+<p>       I started the analysis with the food that had the most entries which was rice with 67,003 entries. With each food, I started the with a worldwide view and then narrowed it down to a six region’s and then narrowed it further to specific countries.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-2-1.png" width="1344" /></p>
+<p>      <br />
+The overall price for rice has increased in the last decade. Additionally there is a dramatic spike in the price from 2006 - 2007.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-3-1.png" width="1344" style="display: block; margin: auto;" /></p>
+<p>       As for the inflation of rice, there are many observations greater than 10% which means the overall price of rice is unstable</p>
+<p>       In order to investigate the spikes from 2006 - 2007 a line chart with all regions plotted is apropietate.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-4-1.png" width="1344" /></p>
+<p>       You can see that in East Asia &amp; Pacific, South Asia, Latin America &amp; Caribbean and finally the Middle East &amp; North Africa all seem to have a similar trend. While Europe &amp; Central Asia has a slightly higher price. Most notably is Sub-Saharan Africa which has multiple spikes in price which is most likely the cause of the spikes in 2006. Unfortunately, you can see that we do not have a complete time series for all regions.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
+<p>       After a closer look at each region, it is easy to see that Sub-Saharan Africa had a volatile price increase. Sub-Saharan Africa is most prone to food price volatility out of all the regions due to shortages, poverty, and political conflict. Sub-Saharan Africa is why there were two spikes when all regions were plotted together.</p>
+<p>       In East Asia &amp; Pacific the price drops for a few years but then picks up again. The price drop and slow increase could be due to the economies of certain countries, population changes, and technology of harvesting. Similarly, a price drop and increase exist in the Middle East &amp; North Africa, but I do not have enough data to see if this was a trend. South Asia has the most controlled price since over 90% of the global rice is produced in the Asia-Pacific Region. The price of rice is stable for people in these countries <a href="http://www.fao.org/docrep/003/x6905e/x6905e04.htm">FAO</a>.</p>
+<p>       Price only tells half of the story. Inflation for each region will show which regions are stable and unstable. To do this, I created a box plot.</p>
+<p>In reading the box plots note that larger boxes and more outliers are indicative of more variation in monthly inflation, therefore more instability in prices.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-6-1.png" width="1344" />        As expected Sub-Saharan Africa is the most unstable region with the most significant outliers. After investigating the data, I found that these outliers are caused by Liberia in 2006 and Rwanda in 2015. Sub-Saharan Africa has the highest and inconsistent prices probably due to domestic and global pressures contributing to inflation.</p>
+<p>       Latin America &amp; Caribbean has the smallest quartile range, which means it is one of the most stable regions for rice price. Fluctuation of rice production may not impact the rice price as much as other regions since wheat, maize, and beans highly supplement this population’s diet. I also found that within the last ten years Latin America &amp; Caribbean benefited from a growing economy and is trying to maintain stability.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-7-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-8-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-9-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-10-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-11-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-12-1.png" width="1152" /></p>
+<p>       Both Liberia and Nigeria have extremely high prices. The cause for the high prices is likely due to the aftermath of the second Liberian Civil War which ended in 2003 in addition to facing political corruption <a href="http://www.bbc.com/news/world-africa-13732188">BBC</a>. The high prices in Nigeria are likely caused by them for math and the after math of their 2008 food crisis. <a href="http://ageconsearch.umn.edu/bitstream/212712/2/IIAAE%20Nigeria.pdf">UMN</a></p>
+<p>       In order to look at inflation a box plot is great to compare many countries.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-13-1.png" width="1344" /></p>
+<p>       Histograms are usfeul to take a closer look at each country.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-14-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-15-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-16-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-17-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-18-1.png" width="1344" /> <img src="rice_files/figure-html/unnamed-chunk-19-1.png" width="1152" /></p>
+<p>       To compare prices across countries once again I created a table and a scatter plot comparing average inflation and the standard variation of inflation. Larger averages are associated with larger total price increases and larger standard deviations are indicative of price volatility</p>
+<table>
+<caption>Rice Standard Deviation vs Avgerage Inflation Table</caption>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="right">avg_infla</th>
+<th align="right">stdev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Timor-Leste</td>
+<td align="right">5.4017798</td>
+<td align="right">47.237622</td>
+</tr>
+<tr class="even">
+<td align="left">Liberia</td>
+<td align="right">4.8354184</td>
+<td align="right">132.860933</td>
+</tr>
+<tr class="odd">
+<td align="left">Syrian Arab Republic</td>
+<td align="right">4.7134075</td>
+<td align="right">32.098102</td>
+</tr>
+<tr class="even">
+<td align="left">Ethiopia</td>
+<td align="right">4.4593812</td>
+<td align="right">32.497017</td>
+</tr>
+<tr class="odd">
+<td align="left">Armenia</td>
+<td align="right">3.9938538</td>
+<td align="right">63.387260</td>
+</tr>
+<tr class="even">
+<td align="left">Bhutan</td>
+<td align="right">2.3137748</td>
+<td align="right">11.070542</td>
+</tr>
+<tr class="odd">
+<td align="left">Zambia</td>
+<td align="right">2.1568600</td>
+<td align="right">22.272192</td>
+</tr>
+<tr class="even">
+<td align="left">Malawi</td>
+<td align="right">2.0064171</td>
+<td align="right">20.486342</td>
+</tr>
+<tr class="odd">
+<td align="left">Tajikistan</td>
+<td align="right">1.9995267</td>
+<td align="right">19.334672</td>
+</tr>
+<tr class="even">
+<td align="left">Somalia</td>
+<td align="right">1.9698665</td>
+<td align="right">25.866730</td>
+</tr>
+<tr class="odd">
+<td align="left">Myanmar</td>
+<td align="right">1.8671663</td>
+<td align="right">21.154988</td>
+</tr>
+<tr class="even">
+<td align="left">Cameroon</td>
+<td align="right">1.8314953</td>
+<td align="right">21.247226</td>
+</tr>
+<tr class="odd">
+<td align="left">Ghana</td>
+<td align="right">1.8054960</td>
+<td align="right">16.793966</td>
+</tr>
+<tr class="even">
+<td align="left">Central African Republic</td>
+<td align="right">1.7400635</td>
+<td align="right">20.449140</td>
+</tr>
+<tr class="odd">
+<td align="left">Swaziland</td>
+<td align="right">1.7167788</td>
+<td align="right">11.590222</td>
+</tr>
+<tr class="even">
+<td align="left">Yemen</td>
+<td align="right">1.6324750</td>
+<td align="right">20.208453</td>
+</tr>
+<tr class="odd">
+<td align="left">Iran (Islamic Republic of)</td>
+<td align="right">1.4819561</td>
+<td align="right">8.150874</td>
+</tr>
+<tr class="even">
+<td align="left">Ukraine</td>
+<td align="right">1.4260470</td>
+<td align="right">14.586262</td>
+</tr>
+<tr class="odd">
+<td align="left">Turkey</td>
+<td align="right">1.3296529</td>
+<td align="right">2.874918</td>
+</tr>
+<tr class="even">
+<td align="left">Colombia</td>
+<td align="right">1.0556358</td>
+<td align="right">16.085126</td>
+</tr>
+<tr class="odd">
+<td align="left">Chad</td>
+<td align="right">1.0344999</td>
+<td align="right">16.408815</td>
+</tr>
+<tr class="even">
+<td align="left">Madagascar</td>
+<td align="right">0.9904873</td>
+<td align="right">14.318798</td>
+</tr>
+<tr class="odd">
+<td align="left">Bolivia</td>
+<td align="right">0.9774073</td>
+<td align="right">23.803411</td>
+</tr>
+<tr class="even">
+<td align="left">United Republic of Tanzania</td>
+<td align="right">0.9718870</td>
+<td align="right">12.625397</td>
+</tr>
+<tr class="odd">
+<td align="left">Guinea</td>
+<td align="right">0.9537512</td>
+<td align="right">13.265233</td>
+</tr>
+<tr class="even">
+<td align="left">Sri Lanka</td>
+<td align="right">0.9102575</td>
+<td align="right">14.159792</td>
+</tr>
+<tr class="odd">
+<td align="left">Democratic Republic of the Congo</td>
+<td align="right">0.9011999</td>
+<td align="right">14.443713</td>
+</tr>
+<tr class="even">
+<td align="left">Burkina Faso</td>
+<td align="right">0.9004965</td>
+<td align="right">18.781211</td>
+</tr>
+<tr class="odd">
+<td align="left">Mozambique</td>
+<td align="right">0.8682585</td>
+<td align="right">12.503398</td>
+</tr>
+<tr class="even">
+<td align="left">Guinea-Bissau</td>
+<td align="right">0.8552664</td>
+<td align="right">10.489868</td>
+</tr>
+<tr class="odd">
+<td align="left">Algeria</td>
+<td align="right">0.8247176</td>
+<td align="right">10.356969</td>
+</tr>
+<tr class="even">
+<td align="left">Indonesia</td>
+<td align="right">0.7705247</td>
+<td align="right">2.054337</td>
+</tr>
+<tr class="odd">
+<td align="left">Nepal</td>
+<td align="right">0.6778352</td>
+<td align="right">10.910343</td>
+</tr>
+<tr class="even">
+<td align="left">Jordan</td>
+<td align="right">0.6672133</td>
+<td align="right">6.315960</td>
+</tr>
+<tr class="odd">
+<td align="left">Nigeria</td>
+<td align="right">0.6502781</td>
+<td align="right">11.783688</td>
+</tr>
+<tr class="even">
+<td align="left">Mauritania</td>
+<td align="right">0.6462405</td>
+<td align="right">11.961028</td>
+</tr>
+<tr class="odd">
+<td align="left">Cape Verde</td>
+<td align="right">0.6328457</td>
+<td align="right">7.701727</td>
+</tr>
+<tr class="even">
+<td align="left">Philippines</td>
+<td align="right">0.6063332</td>
+<td align="right">10.616044</td>
+</tr>
+<tr class="odd">
+<td align="left">Kyrgyzstan</td>
+<td align="right">0.5065342</td>
+<td align="right">9.452391</td>
+</tr>
+<tr class="even">
+<td align="left">Haiti</td>
+<td align="right">0.4929802</td>
+<td align="right">8.990374</td>
+</tr>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="right">0.4658786</td>
+<td align="right">9.217594</td>
+</tr>
+<tr class="even">
+<td align="left">Senegal</td>
+<td align="right">0.4486627</td>
+<td align="right">9.580261</td>
+</tr>
+<tr class="odd">
+<td align="left">Iraq</td>
+<td align="right">0.4254396</td>
+<td align="right">8.451836</td>
+</tr>
+<tr class="even">
+<td align="left">Benin</td>
+<td align="right">0.4193869</td>
+<td align="right">8.038088</td>
+</tr>
+<tr class="odd">
+<td align="left">Rwanda</td>
+<td align="right">0.3914386</td>
+<td align="right">14.679122</td>
+</tr>
+<tr class="even">
+<td align="left">Egypt</td>
+<td align="right">0.3671392</td>
+<td align="right">8.522237</td>
+</tr>
+<tr class="odd">
+<td align="left">Bangladesh</td>
+<td align="right">0.3552173</td>
+<td align="right">7.601529</td>
+</tr>
+<tr class="even">
+<td align="left">Cote d’Ivoire</td>
+<td align="right">0.3172731</td>
+<td align="right">7.528633</td>
+</tr>
+<tr class="odd">
+<td align="left">India</td>
+<td align="right">0.2854850</td>
+<td align="right">6.706518</td>
+</tr>
+<tr class="even">
+<td align="left">Mali</td>
+<td align="right">0.2456774</td>
+<td align="right">6.998647</td>
+</tr>
+<tr class="odd">
+<td align="left">Djibouti</td>
+<td align="right">0.2431958</td>
+<td align="right">8.832855</td>
+</tr>
+<tr class="even">
+<td align="left">El Salvador</td>
+<td align="right">0.1890508</td>
+<td align="right">5.257769</td>
+</tr>
+<tr class="odd">
+<td align="left">Niger</td>
+<td align="right">0.1276988</td>
+<td align="right">5.183075</td>
+</tr>
+<tr class="even">
+<td align="left">Peru</td>
+<td align="right">0.0491141</td>
+<td align="right">2.272152</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan</td>
+<td align="right">0.0062792</td>
+<td align="right">5.030260</td>
+</tr>
+</tbody>
+</table>
+<p><img src="rice_files/figure-html/unnamed-chunk-21-1.png" width="1152" /></p>
+<p>       With so many rice values, I have enough rice classified as import and local. I can compare the price of local and imported rice to see if there is a correlation between the two.</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-22-1.png" width="1536" /></p>
+<p>       In every country, imported local and not listed follow the same trend with just a slight increase or decrease in price. The purple shows that they have the same price.</p>
+<p>       Does inflation for import and export have a significant difference?</p>
+<p><img src="rice_files/figure-html/unnamed-chunk-23-1.png" width="1344" /></p>
+<p>       Chad and Mali have an identical histograms for both Import and Not Listed which leads me to believe that rice I categorized as Not Listed may be imported rice. Additionally, for both these countries, Local rice has a much less stable price, which makes sense because of seasonal crops. Mali has three growing seasons, main season Oct-Dec, off-season Dec-Jan and deepwater rice May-July <a href="http://ricepedia.org/mali">Ricepedia</a>. Then Chad has two seasons, main season Oct - Dec and off-season June - July <a href="http://www.fao.org/docrep/005/Y4347E/y4347e0f.htm">FAO</a>. Off season rice has to be grown in well-irrigated areas.</p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

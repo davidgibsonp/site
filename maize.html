@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">World Food Prices</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Intro &amp; Data Cleaning</a>
+</li>
+<li>
+  <a href="rice.html">Rice</a>
+</li>
+<li>
+  <a href="maize.html">Maize</a>
+</li>
+<li>
+  <a href="sorghum.html">Sorghum</a>
+</li>
+<li>
+  <a href="beans.html">Beans</a>
+</li>
+<li>
+  <a href="millet.html">Millet</a>
+</li>
+<li>
+  <a href="conclusion.html">Conclusion</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<h2>
+Maize
+</h2>
+<p>       The next food in the analysis is maize which is the second most frequent food in the dataset.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-2-1.png" width="1344" /></p>
+<p>       Unlike rice, there is not a significant increase or decrease in the price. Though there is a large spike from 2002 to 2003.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-3-1.png" width="1344" style="display: block; margin: auto;" /></p>
+<p>       As for inflation, there is a symmetric curve similar to rice meaning the overall price for maize has been stable for the last decade.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-4-1.png" width="1344" /></p>
+<p>       Since maize is not as universal of food as rice, we do not have data for all regions. Additionally, there is not a consistency of time for each region. For Sub-Saharan Africa, there is an almost identical spike from 2002 to 2003 and is the cause of the world wide spike the world wide maize plot. This spike was caused by a Southern African drought that lasted from 2002 to about 2005. The crisis affected mainly Malawi, Zambia, Lesotho, Zimbabwe, Swaziland and part of Mozambique <a href="http://www.africanwater.org/drought_crisis_2002.htm">World Health Organization</a>. There is data for all six of these countries Additionally the World Food Program (WFP) estimates that more than 2.6 million people were affected by the food security crisis <a href="http://pdf.usaid.gov/pdf_docs/Pnacp289.pdf">USAid</a>.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
+<p><img src="maize_files/figure-html/unnamed-chunk-6-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-7-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-8-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-9-1.png" width="1152" /></p>
+<p>       Countries with a noticeably higher price for maize are South Sudan, Nigeria, and Guinea-Bissau. After 2006 Guinea-Bissau saw a drastic decrease in harvest yield which would account for the higher prices<a href="https://knoema.com/FAOPRDSC2016R/production-statistics-crops-crops-processed?country=1000860-guinea-bissau&amp;item=1000920-maize">Knema</a>. The reason for the decrease is likely due to climate change. The high prices in South Sudan can be justified by famines that have affected south Sudan since 2001. Currently, South Sudan is recovering from a famine that hit early 2017. Also, a conflict between rebels and the government was in action from 2003 to 2005, this was known as The Darfur conflict<a href="http://www.waterforsouthsudan.org/brief-history-of-south-sudan/">Water For Sudan</a>.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-10-1.png" width="1344" /></p>
+<p>       By looking at the inflation for each region we see that Sub_Sahara has the most outliers, but East Asia and Pacific has a larger quartile range. This is interesting because after research there has been a big push for maize farming in Asia. After the Philippines’ success with genetically modified corn. Vietnam and Indonesia we close to follow. <a href="http://www.thehindubusinessline.com/economy/agri-business/south-east-asia-could-be-corn-hub-for-asia-pacific/article4140604.ece">The Hindu Business Line</a>. The reason for the push is an increase in domestic animal feed demand. This instability of price is likely caused by the shift from imported maize to local maize.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-11-1.png" width="1344" /></p>
+<p>Countries that have an unstable inflation are Myramar and South Sudan. South Sudan instability is caused by the issues discussed above. As for Myanmar, this is interesting because maize production has increased steadily since 2000 <a href="https://knoema.com/atlas/Myanmar/topics/Agriculture/Crops-Production-Yield/Maize-yield">Knoema</a>.</p>
+<p><img src="maize_files/figure-html/unnamed-chunk-12-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-13-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-14-1.png" width="1344" /> <img src="maize_files/figure-html/unnamed-chunk-15-1.png" width="1152" /></p>
+<table>
+<caption>Maize Standard Deviation vs Avgerage Inflation Table</caption>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="right">avg_infla</th>
+<th align="right">stdev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Somalia</td>
+<td align="right">32.9654182</td>
+<td align="right">159.961581</td>
+</tr>
+<tr class="even">
+<td align="left">Timor-Leste</td>
+<td align="right">8.8774900</td>
+<td align="right">54.147744</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethiopia</td>
+<td align="right">6.0840204</td>
+<td align="right">156.869190</td>
+</tr>
+<tr class="even">
+<td align="left">Central African Republic</td>
+<td align="right">5.4651321</td>
+<td align="right">44.107040</td>
+</tr>
+<tr class="odd">
+<td align="left">South Sudan</td>
+<td align="right">5.1929429</td>
+<td align="right">31.937420</td>
+</tr>
+<tr class="even">
+<td align="left">Myanmar</td>
+<td align="right">4.8295550</td>
+<td align="right">38.275683</td>
+</tr>
+<tr class="odd">
+<td align="left">Malawi</td>
+<td align="right">3.8971276</td>
+<td align="right">25.973584</td>
+</tr>
+<tr class="even">
+<td align="left">Swaziland</td>
+<td align="right">3.5054968</td>
+<td align="right">35.014924</td>
+</tr>
+<tr class="odd">
+<td align="left">Kenya</td>
+<td align="right">3.4847857</td>
+<td align="right">88.183849</td>
+</tr>
+<tr class="even">
+<td align="left">Tajikistan</td>
+<td align="right">2.8993300</td>
+<td align="right">24.558702</td>
+</tr>
+<tr class="odd">
+<td align="left">Cote d’Ivoire</td>
+<td align="right">2.5058021</td>
+<td align="right">22.797042</td>
+</tr>
+<tr class="even">
+<td align="left">Uganda</td>
+<td align="right">2.1519224</td>
+<td align="right">20.810455</td>
+</tr>
+<tr class="odd">
+<td align="left">Kyrgyzstan</td>
+<td align="right">2.0670293</td>
+<td align="right">17.806692</td>
+</tr>
+<tr class="even">
+<td align="left">Zambia</td>
+<td align="right">2.0632366</td>
+<td align="right">20.769831</td>
+</tr>
+<tr class="odd">
+<td align="left">Ghana</td>
+<td align="right">1.9474782</td>
+<td align="right">16.629214</td>
+</tr>
+<tr class="even">
+<td align="left">Mozambique</td>
+<td align="right">1.8051547</td>
+<td align="right">17.985385</td>
+</tr>
+<tr class="odd">
+<td align="left">Democratic Republic of the Congo</td>
+<td align="right">1.7799060</td>
+<td align="right">19.567411</td>
+</tr>
+<tr class="even">
+<td align="left">Rwanda</td>
+<td align="right">1.7240946</td>
+<td align="right">19.036181</td>
+</tr>
+<tr class="odd">
+<td align="left">Benin</td>
+<td align="right">1.5445521</td>
+<td align="right">16.644381</td>
+</tr>
+<tr class="even">
+<td align="left">Gambia</td>
+<td align="right">1.5273052</td>
+<td align="right">18.398375</td>
+</tr>
+<tr class="odd">
+<td align="left">Chad</td>
+<td align="right">1.3621964</td>
+<td align="right">16.665949</td>
+</tr>
+<tr class="even">
+<td align="left">United Republic of Tanzania</td>
+<td align="right">1.3070225</td>
+<td align="right">15.836546</td>
+</tr>
+<tr class="odd">
+<td align="left">Costa Rica</td>
+<td align="right">1.1862874</td>
+<td align="right">8.809701</td>
+</tr>
+<tr class="even">
+<td align="left">Nigeria</td>
+<td align="right">0.9834088</td>
+<td align="right">14.937338</td>
+</tr>
+<tr class="odd">
+<td align="left">Haiti</td>
+<td align="right">0.9492058</td>
+<td align="right">13.327527</td>
+</tr>
+<tr class="even">
+<td align="left">Panama</td>
+<td align="right">0.7967550</td>
+<td align="right">5.751966</td>
+</tr>
+<tr class="odd">
+<td align="left">Zimbabwe</td>
+<td align="right">0.7934999</td>
+<td align="right">12.691456</td>
+</tr>
+<tr class="even">
+<td align="left">Cameroon</td>
+<td align="right">0.7432412</td>
+<td align="right">12.253941</td>
+</tr>
+<tr class="odd">
+<td align="left">Senegal</td>
+<td align="right">0.6825636</td>
+<td align="right">11.709557</td>
+</tr>
+<tr class="even">
+<td align="left">Colombia</td>
+<td align="right">0.6728231</td>
+<td align="right">11.198223</td>
+</tr>
+<tr class="odd">
+<td align="left">Burkina Faso</td>
+<td align="right">0.5975514</td>
+<td align="right">10.959116</td>
+</tr>
+<tr class="even">
+<td align="left">El Salvador</td>
+<td align="right">0.5577005</td>
+<td align="right">10.570930</td>
+</tr>
+<tr class="odd">
+<td align="left">Niger</td>
+<td align="right">0.5443080</td>
+<td align="right">10.638372</td>
+</tr>
+<tr class="even">
+<td align="left">Mali</td>
+<td align="right">0.5019097</td>
+<td align="right">10.030858</td>
+</tr>
+<tr class="odd">
+<td align="left">Honduras</td>
+<td align="right">0.4673155</td>
+<td align="right">11.468833</td>
+</tr>
+<tr class="even">
+<td align="left">Guatemala</td>
+<td align="right">0.4528838</td>
+<td align="right">7.339666</td>
+</tr>
+<tr class="odd">
+<td align="left">Peru</td>
+<td align="right">0.3700926</td>
+<td align="right">3.879289</td>
+</tr>
+<tr class="even">
+<td align="left">Lesotho</td>
+<td align="right">0.1941655</td>
+<td align="right">5.029687</td>
+</tr>
+<tr class="odd">
+<td align="left">Guinea-Bissau</td>
+<td align="right">0.0303727</td>
+<td align="right">11.701285</td>
+</tr>
+</tbody>
+</table>
+<p><img src="maize_files/figure-html/unnamed-chunk-17-1.png" width="1152" /></p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
